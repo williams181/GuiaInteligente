@@ -3,7 +3,7 @@ import cv2
 print("Versão do OpenCV:", cv2.__version__)
 
 classificador = cv2.CascadeClassifier("data\\cascades\\haarcascade_fullbody.xml")
-webCam = cv2.VideoCapture(1)
+webCam = cv2.VideoCapture(0)
 
 while(True):
     conectou, imagem = webCam.read()
