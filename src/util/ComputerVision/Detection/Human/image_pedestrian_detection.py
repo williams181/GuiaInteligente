@@ -1,7 +1,7 @@
 import cv2
 import imutils
 
-# Initializing the HOG person
+# Initializing the HOG pessoa
 # detector
 hog = cv2.HOGDescriptor()
 hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
@@ -11,7 +11,7 @@ image = cv2.imread('data\\imagens\\input\\ifpe teste 01.1.png')
 
 # Resizing the Image
 image = imutils.resize(image,
-					width=min(900, image.shape[1]))
+					width=min(800, image.shape[1]))
 
 # Detecting all the regions in the
 # Image that has a pedestrians inside it
@@ -31,3 +31,6 @@ cv2.imshow("Image", image)
 cv2.waitKey(0)
 
 cv2.destroyAllWindows()
+
+
+

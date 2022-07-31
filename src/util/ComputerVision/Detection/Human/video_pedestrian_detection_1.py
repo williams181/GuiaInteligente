@@ -2,8 +2,10 @@ import cv2
 
 print("Versão do OpenCV:", cv2.__version__)
 
+# Utilização do Classificador para detecção de todo o corpo
 classificador = cv2.CascadeClassifier("data\\cascades\\haarcascade_fullbody.xml")
-webCam = cv2.VideoCapture("data\\video\\input\\ifpe teste 01.2.mp4")
+# Video Produzido nas dependências do instituto federal
+webCam = cv2.VideoCapture("data\\video\\input\\ifpe teste 01.1.mp4")
 
 while(True):
     conectou, imagem = webCam.read()
