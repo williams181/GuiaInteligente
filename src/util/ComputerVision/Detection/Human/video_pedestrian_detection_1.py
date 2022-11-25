@@ -5,7 +5,7 @@ print("Versão do OpenCV:", cv2.__version__)
 # Utilização do Classificador para detecção de todo o corpo
 classificador = cv2.CascadeClassifier("data\\cascades\\haarcascade_fullbody.xml")
 # Video de referência
-webCam = cv2.VideoCapture("data\\videos\\input\\4\\4.mp4")
+webCam = cv2.VideoCapture("data\\videos\\input\\ifpe (1).mp4")
 
 while(True):
     conectou, imagem = webCam.read()

@@ -3,8 +3,8 @@ import serial
 
 print("Versão do OpenCV:", cv2.__version__)
 
-classificador = cv2.CascadeClassifier('data\\cascades\\haarcascade_frontalface_default.xml')
-webCam = cv2.VideoCapture(0)
+classificador = cv2.CascadeClassifier('data\\opencv\\cascades\\haarcascade_frontalface_default.xml')
+webCam = cv2.VideoCapture(1)
 
 while(True):
     conectou, imagem = webCam.read()
