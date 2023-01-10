@@ -4,7 +4,7 @@ import serial
 print("Versão do OpenCV:", cv2.__version__)
 
 classificador = cv2.CascadeClassifier('data\\opencv\\cascades\\haarcascade_frontalface_default.xml')
-webCam = cv2.VideoCapture(1)
+webCam = cv2.VideoCapture('data\\videos\\input\\ifpe (28).mp4')
 
 while(True):
     conectou, imagem = webCam.read()
@@ -46,7 +46,7 @@ while(True):
     
     cv2.imshow("Rosto", imagem)
     
-    teclou = cv2.waitKey(1) & 0xFF
+    teclou = cv2.waitKey(5) & 0xFF
     if teclou == ord('q') or teclou == 27: # se apertar q ou ESC
         webCam.release()
         cv2.destroyAllWindows()

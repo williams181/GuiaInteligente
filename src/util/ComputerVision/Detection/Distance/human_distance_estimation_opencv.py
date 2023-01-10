@@ -19,7 +19,7 @@ BLACK = (0, 0, 0)
 fonts = cv2.FONT_HERSHEY_COMPLEX
 
 # face detector object
-face_detector = cv2.CascadeClassifier("data\\cascades\\haarcascade_fullbody.xml")
+face_detector = cv2.CascadeClassifier("data\\opencv\\cascades\\haarcascade_fullbody.xml")
 
 # focal length finder function
 def Focal_Length_Finder(measured_distance, real_width, width_in_rf_image):
@@ -62,7 +62,7 @@ def face_data(image):
 
 
 # reading reference_image from directory
-ref_image = cv2.imread("data\\imagens\\input\\face.png")
+ref_image = cv2.imread("data\\imagens\\input\\1\\1.jpg")
 
 # find the face width(pixels) in the reference_image
 ref_image_face_width = face_data(ref_image)
@@ -77,7 +77,7 @@ Focal_length_found = Focal_Length_Finder(
 print(Focal_length_found)
 
 # show the reference image
-cv2.imshow("data\\imagens\\input\\body.png", ref_image)
+cv2.imshow("data\\imagens\\input\\1\\1.jpg", ref_image)
 
 # initialize the camera object so that we
 # can get frame from it

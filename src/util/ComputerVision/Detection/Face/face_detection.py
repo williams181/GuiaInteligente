@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 detector= cv2.CascadeClassifier('data\\opencv\\cascades\\haarcascade_frontalface_default.xml')
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture('data\\videos\\input\\ifpe (5).mp4')
 
 while(True):
     ret, img = cap.read()

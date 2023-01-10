@@ -19,7 +19,7 @@ BLACK = (0, 0, 0)
 fonts = cv2.FONT_HERSHEY_COMPLEX
 
 # face detector object
-face_detector = cv2.CascadeClassifier("data\\cascades\\haarcascade_frontalface_default.xml")
+face_detector = cv2.CascadeClassifier("data\\opencv\\cascades\\haarcascade_frontalface_default.xml")
 
 # focal length finder function
 def Focal_Length_Finder(measured_distance, real_width, width_in_rf_image):
@@ -41,7 +41,7 @@ def face_data(image):
 
 	face_width = 0 # making face width to zero
 
-	# converting color image ot gray scale image
+	# converting color image to gray scale image
 	gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 	# detecting face in the image
@@ -62,7 +62,7 @@ def face_data(image):
 
 
 # reading reference_image from directory
-ref_image = cv2.imread("data\\imagens\\input\\face.png")
+ref_image = cv2.imread("data\\imagens\\output\\face1.jpg")
 
 # find the face width(pixels) in the reference_image
 ref_image_face_width = face_data(ref_image)
@@ -77,11 +77,11 @@ Focal_length_found = Focal_Length_Finder(
 print(Focal_length_found)
 
 # show the reference image
-cv2.imshow("data\\imagens\\input\\face.png", ref_image)
+cv2.imshow("data\\imagens\\output\\face1.jpg", ref_image)
 
 # initialize the camera object so that we
 # can get frame from it
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("data\\videos\\input\\ifpe (5).mp4")
 
 # looping through frame, incoming from
 # camera/video
@@ -97,9 +97,9 @@ while True:
 	# check if the face is zero then not
 	# find the distance
 	if face_width_in_frame != 0:
-	
+		
 		# finding the distance by calling function
-		# Distance distance finder function need
+		# Distance finder function need
 		# these arguments the Focal_Length,
 		# Known_width(centimeters),
 		# and Known_distance(centimeters)
@@ -125,5 +125,5 @@ while True:
 # closing the camera
 cap.release()
 
-# closing the the windows that are opened
+# closing the windows that are opened
 cv2.destroyAllWindows()
