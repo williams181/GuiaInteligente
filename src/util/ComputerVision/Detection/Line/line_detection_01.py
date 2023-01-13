@@ -4,7 +4,7 @@ import cv2 as cv
 import numpy as np
 def main(argv):
     
-    default_file = 'data\\imagens\\input\\calcada-piso-tatil.jpg'
+    default_file = 'data\\imagens\\input\\pisos tateis\\png\\1.png'
     filename = argv[0] if len(argv) > 0 else default_file
     # Loads an image
     src = cv.imread(cv.samples.findFile(filename), cv.IMREAD_GRAYSCALE)
@@ -41,11 +41,13 @@ def main(argv):
     if linesP is not None:
         for i in range(0, len(linesP)):
             l = linesP[i][0]
-            cv.line(cdstP, (l[0], l[1]), (l[2], l[3]), (0,0,255), 3, cv.LINE_AA)
+            cv.line(cdstP, (l[0], l[1]), (l[2], l[3]), (0,0,200), 3, cv.LINE_AA)
     
-    cv.imshow("Source", src)
-    cv.imshow("Detected Lines (in red) - Standard Hough Line Transform", cdst)
-    cv.imshow("Detected Lines (in red) - Probabilistic Line Transform", cdstP)
+    imS1 = cv.resize(src, (960, 540)) 
+    cv.imshow("Source", imS1)
+    # cv.imshow("Detected Lines (in red) - Standard Hough Line Transform", cdst)
+    imS2 = cv.resize(cdstP, (960, 540)) 
+    cv.imshow("Detected Lines (in red) - Probabilistic Line Transform", imS2)
     
     cv.waitKey()
     return 0
